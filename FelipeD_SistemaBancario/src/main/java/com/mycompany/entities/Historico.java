@@ -12,13 +12,21 @@ public class Historico {
         this.titular = titular;
         this.operacoes = new ArrayList<>();
     }
-    
+
+    public Titular getTitular() {
+        return titular;
+    }
+
+    public List<Operacao> getOperacoes() {
+        return operacoes;
+    }
+
     public void adicionarOperacao(String nome, double valor) {
         Operacao operacao = new Operacao(nome, valor);
         operacoes.add(operacao);
     }
 
-    public List<Operacao> buscarOperacoes(String nome) {
+    public List<Operacao> buscarOperacoesNome(String nome) {
         List<Operacao> resultado = new ArrayList<>();
         for (Operacao operacao : operacoes) {
             if (titular.getNome().equals(nome)) {
@@ -28,7 +36,7 @@ public class Historico {
         return resultado;
     }
 
-    public List<Operacao> buscarOperacoes(double valor) {
+    public List<Operacao> buscarOperacoesValor(double valor) {
         List<Operacao> resultado = new ArrayList<>();
         for (Operacao operacao : operacoes) {
             if (operacao.getValor() == valor) {

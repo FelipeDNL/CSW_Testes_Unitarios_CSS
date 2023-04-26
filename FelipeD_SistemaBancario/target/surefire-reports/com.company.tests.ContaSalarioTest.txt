@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.company.tests.ContaTest
+Test set: com.company.tests.ContaSalarioTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in com.company.tests.ContaTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.company.tests.ContaSalarioTest

@@ -4,26 +4,16 @@ package com.mycompany.entities;
 public class ContaPoupanca extends Conta {
     
     public ContaPoupanca(Titular titular) {
-<span class="nc" id="L7">        super(titular);</span>
-<span class="nc" id="L8">    }</span>
+<span class="fc" id="L7">        super(titular);</span>
+<span class="fc" id="L8">    }</span>
 
     @Override
     public boolean sacar(float valor) {
-<span class="nc" id="L12">        float taxaSaque = valor * 0.05f;</span>
-<span class="nc bnc" id="L13" title="All 2 branches missed.">        if (this.getSaldo() &gt;= taxaSaque) {</span>
-<span class="nc" id="L14">            this.sacar(this.getSaldo() - taxaSaque);</span>
-<span class="nc" id="L15">            return true;</span>
-        }
-<span class="nc" id="L17">        return false;</span>
-    }
-
-    @Override
-    public boolean pagarOnline(float valor) {
-<span class="nc bnc" id="L22" title="All 2 branches missed.">        if (this.getSaldo() &gt; (this.getSaldo() - valor)){</span>
-<span class="nc" id="L23">            this.sacar(this.getSaldo() - valor);</span>
-<span class="nc" id="L24">            return true;</span>
-        }
-<span class="nc" id="L26">        return false;</span>
+<span class="fc" id="L12">        float taxa = valor * 0.05f;</span>
+<span class="fc bfc" id="L13" title="All 4 branches covered.">        if(valor &gt; 0 &amp;&amp; getSaldo() &gt;= valor + taxa){</span>
+<span class="fc" id="L14">            saldo -= valor + taxa;</span>
+<span class="fc" id="L15">            return true;</span>
+<span class="fc" id="L16">        } else return false;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

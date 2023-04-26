@@ -3,88 +3,59 @@ package com.company.tests;
 
 import com.mycompany.entities.Conta;
 import com.mycompany.entities.Titular;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ContaTest {
+    
+    private Titular titular;
+    private Conta conta;
+    
+    @BeforeEach
+    public void inicializando(){
+        titular = new Titular("Felipe", "Rua Qualquer");
+        conta = new Conta(titular);
+        conta.depositar(50);
+    }
        
     @Test
-    public void testDepositarDinheiroCorretamente(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
+    public void testPassarAoDepositarDinheiroCorretamente(){
         assertTrue(conta.depositar(50));
     }
     
     @Test
-    public void testDepositarQuantidadeNegativa(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
+    public void testFalharAoDepositarQuantidadeNegativa(){
         assertFalse(conta.depositar(-50));
     }
     
     @Test
-    public void testSacarMaisQueSaldo(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
-        conta.depositar(50);
-        
+    public void testFalharAoSacarMaisQueSaldo(){
         assertFalse(conta.sacar(60));
     }
     
     @Test
-    public void testSacarValorNegativo(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
-        conta.depositar(50);
-        
+    public void testFalharAoSacarValorNegativo(){
         assertFalse(conta.sacar(-10));
     }
     
     @Test
-    public void testSacarCorretamente(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
-        conta.depositar(50);
-        
+    public void testPassarAoSacarCorretamente(){
         assertTrue(conta.sacar(50));
     }
     
     @Test
-    public void testPagarOnlineValorMaiorQueSaldo(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
-        conta.depositar(50);
-        
+    public void testFalharAoPagarOnlineComValorMaiorQueSaldo(){
         assertFalse(conta.pagarOnline(60));
     }
     
     @Test
-    public void testPagarOnlineCorretamente(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
-        conta.depositar(50);
-        
+    public void testPassarAoPagarOnlineCorretamente(){
         assertTrue(conta.pagarOnline(50));
     }
     
     @Test
-    public void testPagarOnlineValorZero(){
-        Titular titular1 = new Titular("Felipe", "Rua Qualquer");
-        Conta conta = new Conta(titular1);
-        
-        conta.depositar(50);
-        
+    public void testFalharAoPagarOnlineValorNegativo(){
         assertFalse(conta.pagarOnline(-50));
     }
     

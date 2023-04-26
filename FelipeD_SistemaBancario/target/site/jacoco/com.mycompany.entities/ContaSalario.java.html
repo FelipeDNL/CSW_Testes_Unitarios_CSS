@@ -2,22 +2,14 @@
 package com.mycompany.entities;
 
 public class ContaSalario extends Conta {
+    
     public ContaSalario(Titular titular) {
-<span class="nc" id="L6">        super(titular);</span>
-<span class="nc" id="L7">    }</span>
-
-    @Override
-    public boolean sacar(float valor) {
-<span class="nc bnc" id="L11" title="All 2 branches missed.">        if (this.getSaldo() &gt; (this.getSaldo() - valor)){</span>
-<span class="nc" id="L12">            this.sacar(this.getSaldo() - valor);</span>
-<span class="nc" id="L13">            return true;</span>
-        }
-<span class="nc" id="L15">        return false;</span>
-    }
+<span class="fc" id="L7">        super(titular);</span>
+<span class="fc" id="L8">    }</span>
     
     @Override
     public boolean pagarOnline(float valor){
-<span class="nc" id="L20">        return false;</span>
+<span class="fc" id="L12">        return false;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
