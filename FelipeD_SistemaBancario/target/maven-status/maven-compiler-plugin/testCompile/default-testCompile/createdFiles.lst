@@ -1,0 +1,5 @@
+com\company\tests\ContaTest.class
+com\company\tests\ContaCorrenteTest.class
+com\company\tests\ContaPoupancaTest.class
+com\company\tests\ContaSalarioTest.class
+com\company\tests\HistoricoTest.class

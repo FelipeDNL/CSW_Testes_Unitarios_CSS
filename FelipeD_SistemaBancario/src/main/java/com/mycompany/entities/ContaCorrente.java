@@ -2,6 +2,7 @@
 package com.mycompany.entities;
 
 public class ContaCorrente extends Conta {
+    
     public ContaCorrente(Titular titular) {
         super(titular);
     }

@@ -1,6 +1,8 @@
-com\mycompany\entities\Operacao.class
-com\mycompany\entities\TipoConta.class
 com\mycompany\entities\Titular.class
+com\mycompany\entities\ContaPoupanca.class
+com\mycompany\entities\ContaCorrente.class
+com\mycompany\entities\ContaSalario.class
+com\mycompany\entities\Operacao.class
 com\mycompany\entities\Conta.class
 com\mycompany\entities\Historico.class
 com\mycompany\sistemabancario\Main.class

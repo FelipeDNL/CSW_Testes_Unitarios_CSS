@@ -24,24 +24,24 @@ public class Conta {
     }
     
     public boolean depositar(float valor){
-        this.saldo += valor;
-        return true;
+        if(valor > 0){
+            this.saldo += valor;
+            return true;
+        } else return false;
     }
 
     public boolean sacar(float valor){
-        if (saldo - valor > -limite) {
+        if(valor > 0 && this.getSaldo() >= valor){
             this.saldo -= valor;
             return true;
-        }
-        return false;
+        } else return false;
     }
 
     public boolean pagarOnline(float valor){
-        if(this.getSaldo() > this.getSaldo() - valor){
+        if(valor >= 0 && this.getSaldo() >= valor){
             this.saldo -= valor;
             return true;
-        }
-        return false;
+        }else return false;
     }
     
 }
