@@ -5,46 +5,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Historico {
+    
     private Titular titular;
     private List&lt;Operacao&gt; operacoes;
 
-<span class="fc" id="L11">    public Historico(Titular titular) {</span>
-<span class="fc" id="L12">        this.titular = titular;</span>
-<span class="fc" id="L13">        this.operacoes = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L14">    }</span>
+<span class="fc" id="L12">    public Historico(Titular titular) {</span>
+<span class="fc" id="L13">        this.titular = titular;</span>
+<span class="fc" id="L14">        this.operacoes = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L15">    }</span>
 
-    public Titular getTitular() {
-<span class="nc" id="L17">        return titular;</span>
-    }
+    public void adicionarOperacao(Operacao operacao) {
+<span class="fc" id="L18">        operacoes.add(operacao);</span>
+<span class="fc" id="L19">    }</span>
 
-    public List&lt;Operacao&gt; getOperacoes() {
-<span class="nc" id="L21">        return operacoes;</span>
-    }
-
-    public void adicionarOperacao(String nome, double valor) {
-<span class="nc" id="L25">        Operacao operacao = new Operacao(nome, valor);</span>
-<span class="nc" id="L26">        operacoes.add(operacao);</span>
-<span class="nc" id="L27">    }</span>
-
-    public List&lt;Operacao&gt; buscarOperacoesNome(String nome) {
-<span class="nc" id="L30">        List&lt;Operacao&gt; resultado = new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L31" title="All 2 branches missed.">        for (Operacao operacao : operacoes) {</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">            if (titular.getNome().equals(nome)) {</span>
-<span class="nc" id="L33">                resultado.add(operacao);</span>
+    public List&lt;Operacao&gt; buscarPorOperacao(String operacaoBuscada) {
+<span class="fc" id="L22">        List&lt;Operacao&gt; operacoesEncontradas = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (Operacao operacao : operacoes) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (operacao.getNomeOperacao().equals(operacaoBuscada)) {</span>
+<span class="fc" id="L25">                operacoesEncontradas.add(operacao);</span>
             }
-<span class="nc" id="L35">        }</span>
-<span class="nc" id="L36">        return resultado;</span>
+<span class="fc" id="L27">        }</span>
+<span class="fc" id="L28">        return operacoesEncontradas;</span>
     }
 
-    public List&lt;Operacao&gt; buscarOperacoesValor(double valor) {
-<span class="nc" id="L40">        List&lt;Operacao&gt; resultado = new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (Operacao operacao : operacoes) {</span>
-<span class="nc bnc" id="L42" title="All 2 branches missed.">            if (operacao.getValor() == valor) {</span>
-<span class="nc" id="L43">                resultado.add(operacao);</span>
+    public List&lt;Operacao&gt; buscarPorValor(double valorBuscado) {
+<span class="fc" id="L32">        List&lt;Operacao&gt; operacoesEncontradas = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (Operacao operacao : operacoes) {</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if (operacao.getValor() == valorBuscado) {</span>
+<span class="fc" id="L35">                operacoesEncontradas.add(operacao);</span>
             }
-<span class="nc" id="L45">        }</span>
-<span class="nc" id="L46">        return resultado;</span>
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">        return operacoesEncontradas;</span>
     }
-    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Historico {
+    
     private Titular titular;
     private List<Operacao> operacoes;
 
@@ -13,37 +14,27 @@ public class Historico {
         this.operacoes = new ArrayList<>();
     }
 
-    public Titular getTitular() {
-        return titular;
-    }
-
-    public List<Operacao> getOperacoes() {
-        return operacoes;
-    }
-
-    public void adicionarOperacao(String nome, double valor) {
-        Operacao operacao = new Operacao(nome, valor);
+    public void adicionarOperacao(Operacao operacao) {
         operacoes.add(operacao);
     }
 
-    public List<Operacao> buscarOperacoesNome(String nome) {
-        List<Operacao> resultado = new ArrayList<>();
+    public List<Operacao> buscarPorOperacao(String operacaoBuscada) {
+        List<Operacao> operacoesEncontradas = new ArrayList<>();
         for (Operacao operacao : operacoes) {
-            if (titular.getNome().equals(nome)) {
-                resultado.add(operacao);
+            if (operacao.getNomeOperacao().equals(operacaoBuscada)) {
+                operacoesEncontradas.add(operacao);
             }
         }
-        return resultado;
+        return operacoesEncontradas;
     }
 
-    public List<Operacao> buscarOperacoesValor(double valor) {
-        List<Operacao> resultado = new ArrayList<>();
+    public List<Operacao> buscarPorValor(double valorBuscado) {
+        List<Operacao> operacoesEncontradas = new ArrayList<>();
         for (Operacao operacao : operacoes) {
-            if (operacao.getValor() == valor) {
-                resultado.add(operacao);
+            if (operacao.getValor() == valorBuscado) {
+                operacoesEncontradas.add(operacao);
             }
         }
-        return resultado;
+        return operacoesEncontradas;
     }
-    
 }

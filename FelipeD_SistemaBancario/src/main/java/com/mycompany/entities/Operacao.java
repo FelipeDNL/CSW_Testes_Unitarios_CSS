@@ -4,30 +4,31 @@ package com.mycompany.entities;
 import java.time.LocalDateTime;
 
 public class Operacao {
-    private String nome;
-    private double valor;
+    
+    private String nomeOperacao;
+    private double valorOperado;
     private LocalDateTime data;
 
-    public Operacao (String nome, double valor) {
-        this.nome = nome;
-        this.valor = valor;
+    public Operacao (String nomeOperacao, double valorOperado) {
+        this.nomeOperacao = nomeOperacao;
+        this.valorOperado = valorOperado;
         this.data = LocalDateTime.now();
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeOperacao() {
+        return nomeOperacao;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nomeOperacao) {
+        this.nomeOperacao = nomeOperacao;
     }
 
     public double getValor() {
-        return valor;
+        return valorOperado;
     }
 
     public void setValor(double valor) {
-        this.valor = valor;
+        this.valorOperado = valor;
     }
 
     public LocalDateTime getData() {

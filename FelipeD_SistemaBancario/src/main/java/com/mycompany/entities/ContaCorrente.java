@@ -16,11 +16,10 @@ public class ContaCorrente extends Conta {
     
     @Override
     public boolean sacar(float valor) {
-        if (valor > 0 && saldo - valor > limite) {
+        if (valor > 0 && getSaldo() - valor > getLimite()) {
             saldo -= valor;
             return true;
-        }
-        return false;
+        }else return false;
     }
 
     @Override
@@ -28,7 +27,6 @@ public class ContaCorrente extends Conta {
         if (valor >= 0 && getSaldo() - valor > getLimite()){
             saldo -= valor;
             return true;
-        }
-        return false;
+        }else return false;
     }
 }
