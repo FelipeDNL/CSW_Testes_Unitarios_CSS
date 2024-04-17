@@ -1,4 +1,3 @@
-Tarefa Recuperação de Testes - até 28/4 às 12h
 
 Descrição:
 Desenvolver a lógica por trás de um sistema bancário, onde os seguintes requisitos devem ser resolvidos:
